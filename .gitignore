@@ -1,3 +1,6 @@
+# Standard
+.DS_Store
+
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
@@ -21,3 +24,9 @@ _testmain.go
 
 *.exe
 *.test
+
+# Don't keep our depencies in version control
+Godeps/_workspace
+
+# Don't keep binaries in version control
+web

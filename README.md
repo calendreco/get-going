@@ -24,3 +24,30 @@ Text editor plugins
 
 ### Sublime 
 [GoSublime](https://github.com/DisposaBoy/GoSublime)
+
+Structure
+---------
+Built to support many packages with a common lib. Allows seperation of web & background processes.
+
+Building, testing, running
+--------------------------
+Go commands can operate on multiple packages, for example:
+```bash
+go build ./...
+go test ./...
+go get ./...
+```
+Will build, test and resolve deps for all your packages (web, worker etc...)
+
+Deploying
+---------
+First fix your dependencies to avoid issues in production
+```bash
+godep save ./...
+````
+This will generate Godeps/Godeps.json that will tie packages to the revision you have.
+
+```bash
+heroku create -b https://github.com/kr/heroku-buildpack-go.git
+```
+This will create a heroku instance using the go buildpack. The buildpack will fetch dependencies according to your godeps and build a binary.
