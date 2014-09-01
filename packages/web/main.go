@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/codegangsta/negroni"
 )
@@ -15,5 +16,11 @@ func main() {
 
 	n := negroni.Classic()
 	n.UseHandler(mux)
-	n.Run()
+
+	port := os.Getenv("PORT")
+	if len(port) == 0 {
+		port = "3000"
+	}
+	host := os.Getenv("HOST")
+	n.Run(host + ":" + port)
 }
