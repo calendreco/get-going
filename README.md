@@ -29,25 +29,38 @@ Structure
 ---------
 Built to support many packages with a common lib. Allows seperation of web & background processes.
 
+Installing
+----------
+```bash
+mkdir -p $GOPATH/src/github.com/calendreco
+cd $GOPATH/src/github.com/calendreco
+git clone github.com/calendreco/get-going
+cd get-going
+godep restore
+```
+
 Building, testing, running
 --------------------------
 Go commands can operate on multiple packages, for example:
 ```bash
 go build ./...
 go test ./...
-go get ./...
 ```
-Will build, test and resolve deps for all your packages (web, worker etc...)
+Will build & test for all your packages (web, worker etc...)
+```bash
+gin web
+```
+Will begin watching the project and building/running the web binary
 
 Deploying
 ---------
 First fix your dependencies to avoid issues in production
 ```bash
-godep save ./...
+godep save -copy=false ./...
 ````
-This will generate Godeps/Godeps.json that will tie packages to the revision you have.
+This will generate Godeps that will tie packages to the revision you have.
 
 ```bash
-heroku create -b https://github.com/kr/heroku-buildpack-go.git
+heroku create -b https://github.com/calendreco/heroku-buildpack-go.git
 ```
 This will create a heroku instance using the go buildpack. The buildpack will fetch dependencies according to your godeps and build a binary.
