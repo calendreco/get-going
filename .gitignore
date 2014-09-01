@@ -25,7 +25,7 @@ _testmain.go
 *.exe
 *.test
 
-# Don't keep our depencies in version control
+# Don't keep our dependencies in version control
 Godeps/_workspace
 
 # Don't keep binaries in version control
