@@ -31,3 +31,4 @@ Godeps/_workspace
 # Don't keep binaries in version control
 web
 !packages/web
+gin-bin

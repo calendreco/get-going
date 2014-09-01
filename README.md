@@ -48,9 +48,10 @@ go test ./...
 ```
 Will build & test for all your packages (web, worker etc...)
 ```bash
-gin web
+cd packages/web
+gin
 ```
-Will begin watching the project and building/running the web binary
+Will begin watching,building & running the web binary
 
 Deploying
 ---------
