@@ -9,6 +9,10 @@
 			"ImportPath": "github.com/codegangsta/negroni",
 			"Comment": "v0.1-27-g46bd821",
 			"Rev": "46bd821940d86fb9777f7f86e9ae428132e110da"
+		},
+		{
+			"ImportPath": "github.com/phyber/negroni-gzip/gzip",
+			"Rev": "083a6af9103956efdb8a249093a6c64282a64f3a"
 		}
 	]
 }

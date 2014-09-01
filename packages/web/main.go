@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/codegangsta/negroni"
+	"github.com/phyber/negroni-gzip/gzip"
 )
 
 func main() {
@@ -16,6 +17,9 @@ func main() {
 
 	n := negroni.Classic()
 	n.UseHandler(mux)
+
+	// Example middleware
+	n.Use(gzip.Gzip(gzip.DefaultCompression))
 
 	port := os.Getenv("PORT")
 	if len(port) == 0 {
