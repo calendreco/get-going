@@ -11,8 +11,8 @@
 			"Rev": "46bd821940d86fb9777f7f86e9ae428132e110da"
 		},
 		{
-			"ImportPath": "github.com/phyber/negroni-gzip/gzip",
-			"Rev": "083a6af9103956efdb8a249093a6c64282a64f3a"
+			"ImportPath": "github.com/unrolled/render",
+			"Rev": "40ac5716c7e0bffcc440aac649ea4b880a5d7735"
 		}
 	]
 }
